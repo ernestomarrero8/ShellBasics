@@ -1,18 +1,24 @@
  þ#!/bin/bash
-#Programa para ejemplificar el uso de condicionales If - Else if, else
+#Programa para ejemplificar el uso de condicionales If anidados
 #Autor: Ernesto Marrero @UnInconformeMas
 
 
-#echo "Ejemplo sentenca If -else if, else"
+nota=0
+continua=""
+#echo "Ejemplo sentenca If -else anidados"
 
-read -p "Indique su edad: " edad
+read -n1 -p "Indique cual es su nota (1-9) " nota
 
-if [ $edad -le 17 ]; then
-	echo "La persona es menor de edad"Â´
-elif [ $edad -ge 18 ] && [ $edad -le 64 ]; then
-	echo "La persona es adulta"
+if [ $nota -ge 4 ]; then
+	echo "Aprobado"
+	read -p "Si va a continuar estudiando en el siguiente nivel (s/n):" continua
+	if [$continua = "s" ]; then
+		echo "Bienvenido al sigueinte nivel"
+	else
+		echo "Gracias por todo, mucha suerte! "
+	fi
 else
-	echo "La persona es adulta mayor"
+	echo "Reprobado"
 fi
 
 
